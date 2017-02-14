@@ -97,6 +97,10 @@ nav .container-fluid{
   font-weight: bold;
 }
 
+.home1 img{
+  max-width: 100%;
+}
+
 
 
 #greenbox{
@@ -237,6 +241,18 @@ a.btn-wager span.two{
   color: #ffffff;
 }
 
+
+.game-box{
+  margin:10px 45px 10px 45px;
+}
+.game-box .text{
+  font-size:18px;
+  color:#00557a;
+  font-weight: bold;
+  margin: 40px 0 35px 0;
+}
+
+
 footer{
   padding: 13px;
   text-align: center;
@@ -260,7 +276,8 @@ footer{
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-
+  .game-box .text{ margin: 20px 0 15px 0; }
+  .game-box .btn-box a{ margin: 10px 0 0 0; }
 }
 
 /* Extra Small Devices, Phones */
@@ -286,6 +303,7 @@ footer{
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
+
 }
 
 /* Medium Devices, Desktops */
