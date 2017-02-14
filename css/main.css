@@ -154,15 +154,15 @@ div.trapezoidal.top{
 div.trapezoidal.left{
   position: absolute;
   top:50%;
-  left:-71px;
-  width: 90px;
+  left:-80px;
+  width: 108px;
   margin-top: -20px;
 }
 div.trapezoidal.right{
   position: absolute;
   top:50%;
-  right:-71px;
-  width: 90px;
+  right:-80px;
+  width: 108px;
   margin-top: -20px;
 }
 
