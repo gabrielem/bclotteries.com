@@ -34,4 +34,14 @@ $(function() {
     $("#display-range2").html(newVal)
     return false
   });
+
+
+  $('.js-faq').on('click', function (event) {
+
+    // .slideToggle
+    var answerId = $(event.target).data("answer-id")
+    console.log("js-faq",answerId);
+    $("#" + answerId).slideToggle()
+  })
+  //
 });
