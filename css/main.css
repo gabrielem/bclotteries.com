@@ -390,6 +390,37 @@ input[type=range].range{
 
 
 
+#best-winner{
+  border-left: 2px solid #004461;
+  border-right: 2px solid #004461;
+  border-bottom: 2px solid #004461;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  padding: 30px 0  30px 0;
+  margin-bottom: 40px;
+}
+
+.best-winner a.sx,
+.best-winner a.dx{
+  padding: 20px 20px 20px 20px;
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 90px;
+}
+.best-winner a.sx{
+  border-top-left-radius: 9px;
+  background-color: #00975c;
+}
+.best-winner a.dx{
+  border-top-right-radius: 9px;
+  background-color: #004461;
+}
+
+
 
 /*
   Media Query
