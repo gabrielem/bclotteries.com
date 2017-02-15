@@ -387,8 +387,53 @@ input[type=range].range{
 }
 
 
+.btn-green-pf1{
+  background-color: #00975c;
+  display: inline-block;
+  padding: 5px 30px;
+  color: #ffffff;
+  margin: 30px 0 50px 0;
+}
 
+.link-green-pf1{
+  color: #00975c;
+  border-bottom: 1px solid #00975c;
+  display: inline-block;
+  margin:10px 0 30px 0;
+}
 
+.bet-ex{
+  max-width: 730px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.bet-ex .item{
+  width: 230px;
+  color: #00975c;
+  float: left;
+}
+.bet-ex .item a{
+  background-color: #00975c;
+  display: inline-block;
+  padding: 5px 30px;
+  color: #ffffff;
+  margin: 0px 0 0px 0;
+}
+
+a.back-to-the-game{
+  color: #00975c;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+a.back-to-the-game .fa{
+  font-size:40px;
+  display: inline-block;
+  margin: 0 0 10px 0;
+}
 
 #best-winner{
   border-left: 2px solid #004461;
