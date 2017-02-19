@@ -1,0 +1,83 @@
+<div class="container" >
+
+    
+  <div ng-include src="'views/includes/game-info.html'"></div>
+
+
+  <div ng-include src="'views/includes/game-nav.html'"></div>
+</div>
+
+
+
+<div class="container">
+  <div class="best-winner">
+    <a href class="sx" ng-class="{sel:showTabOne}" ng-click="showTabOne=true;showTabTwo=false;">RECENT BETS</a>
+    <a href class="dx" ng-class="{sel:showTabTwo}" ng-click="showTabOne=false;showTabTwo=true;">WINNERS</a>
+    <div style="clear:both;"></div>
+  </div>
+  <div id="best-winner">
+
+    <!-- lastvalidbets - start -->
+    <table class="tb" ng-show="showTabOne">
+    <thead class="cf">
+      <tr>
+        <th class="text-center"> Game </th>
+        <th class="text-center"> Bet Tx Id </th>
+        <th class="text-center"> Block </th>
+        <th class="text-center"> Your Guess </th>
+        <th class="text-center"> Winning Number </th>
+        <th class="text-center"> Ticket </th>
+        <th class="text-center"> Prize </th>
+        <th class="text-center"> PayoutTx Id </th>
+      </tr>
+    </thead>
+
+    <tr ng-show="isLoading"> <td colspan="8"> loading... </td> </tr>
+    <tbody ng-hide="isLoading">
+      <tr ng-repeat="row in bwData.lastvalidbets">
+        <td> {{row.game_type}} </td>
+        <td> <span ng-bind-html-unsafe="row.tx_id_short"></span> </td>
+        <td> <span ng-bind-html-unsafe="row.block_height_str"></span> </td>
+        <td> {{setGameName(row.game) }} </td>
+        <td> {{setWinningNumber(row)}} </td>
+        <td> {{row.amount_real}} </td>
+        <td> {{row.time_iso}} </td>
+        <td> <span ng-bind-html-unsafe="row.payout_tx_id_short"></span>  </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- lastvalidbets - end -->
+
+  <!-- lastbigwinbets - start -->
+  <table class="tb" ng-show="showTabTwo">
+  <thead class="cf">
+    <tr>
+      <th class="text-center"> Game </th>
+      <th class="text-center"> Bet Tx Id </th>
+      <th class="text-center"> Block </th>
+      <th class="text-center"> Your Guess </th>
+      <th class="text-center"> Winning Number </th>
+      <th class="text-center"> Ticket </th>
+      <th class="text-center"> Prize </th>
+      <th class="text-center"> PayoutTx Id </th>
+    </tr>
+  </thead>
+
+  <tr ng-show="isLoading"> <td colspan="8"> loading... </td> </tr>
+  <tbody ng-hide="isLoading">
+    <tr ng-repeat="row in bwData.lastbigwinbets">
+      <td> {{row.game_type}} </td>
+      <td> <span ng-bind-html-unsafe="row.tx_id_short"></span> </td>
+      <td> <span ng-bind-html-unsafe="row.block_height_str"></span> </td>
+      <td> {{setGameName(row.game) }} </td>
+      <td> {{setWinningNumber(row)}} </td>
+      <td> {{row.amount_real}} </td>
+      <td> {{row.time_iso}} </td>
+      <td> <span ng-bind-html-unsafe="row.payout_tx_id_short"></span>  </td>
+    </tr>
+  </tbody>
+</table>
+<!-- lastbigwinbets - end  -->
+
+  </div>
+</div>

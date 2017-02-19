@@ -1,0 +1,34 @@
+  <div id="popup" ng-show="ticketName">
+    <div class="top">
+      BET ADDRESS
+
+      <span ng-click="hideTickets()" class="pull-right" style="margin:0 5px 0 0;cursor:pointer;">X</span>
+
+
+    </div>
+    <div class="content">
+      <div class="sx text-center" id="pop-qr-code">
+
+      </div>
+      <div class="dx text-center">
+        Lottery: {{ticket.lottery}}
+        <br>
+        {{ticket.type}} {{ticket.number}}
+        <br>
+        WIN: {{ticket.win}}  <i class="fa fa-bitcoin"></i>
+        <br>
+        TICKET: {{ticket.price}} <i class="fa fa-bitcoin"></i>
+      </div>
+      <div style="clear:both;"></div>
+      <p class="green text-center">
+        <b>
+          <a href="bitcoin:{{ticket.address}}?amount={{ticket.price}}">
+            {{ticket.address}}
+          </a>
+        </b>
+      </p>
+    </div>
+    <div class="bottom">
+      Result and Payout at 1 Confirmation
+    </div>
+  </div>
