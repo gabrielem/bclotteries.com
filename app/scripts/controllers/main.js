@@ -76,6 +76,7 @@ angular.module('angularApp')
    "latenumbers":{  }
 }
 
+bwData.lastblock
 bwData.lastvalidbets
 bwData.lastbigwinbets
 */

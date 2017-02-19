@@ -35,6 +35,21 @@ angular.module('angularApp', [
       controller: 'MainCtrl',
     })
 
+    .when('/provably-fair', {
+      templateUrl: 'views/provably-fair.html',
+      controller: 'MainCtrl',
+    })
+    .when('/faq', {
+      templateUrl: 'views/faq.html',
+      controller: 'MainCtrl',
+    })
+    .when('/contact-us', {
+      templateUrl: 'views/contact-us.html',
+      controller: 'MainCtrl',
+    })
+
+
+
 
 
 
