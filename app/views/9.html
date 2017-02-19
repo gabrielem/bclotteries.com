@@ -1,4 +1,6 @@
 <div class="container">
+
+  <div ng-include src="'views/includes/ticket.html'"></div>
   
   <div ng-include src="'views/includes/game-info.html'"></div>
 
@@ -41,7 +43,7 @@
 
 
 
-          <span class="btn-number hidden-xs" id="display-range1a">{{bitRange}}</span>
+          <span style="cursor:pointer;" ng-click="set9str()" class="btn-number hidden-xs" id="display-range1a">{{bitRange}}</span>
 
 
           <span class="visible-xs">

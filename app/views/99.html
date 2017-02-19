@@ -1,5 +1,7 @@
 <div class="container">
-  
+
+  <div ng-include src="'views/includes/ticket.html'"></div>
+
   <div ng-include src="'views/includes/game-info.html'"></div>
 
   <div class="row home2 text-center">
@@ -41,7 +43,7 @@
 
 
 
-          <span class="btn-number hidden-xs" id="display-range1a">{{bitRange}}</span>
+          <span style="cursor:pointer;" ng-click="set99str()" class="btn-number hidden-xs" id="display-range1a">{{bitRange}}</span>
 
 
           <span class="visible-xs">
@@ -85,20 +87,14 @@
       </div>
       <div class="row btn-box">
         <div class="col-md-12 text-center numbers">
+
+
           <div class="">
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
+            <span ng-click="set99set(n)" ng-repeat="n in opt99" class="btn-number-green" ng-show="$index<10">{{n}}</span>
           </div>
 
           <div>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
-            <span class="btn-number-green">00-04</span>  <span class="btn-number-green">00-04</span>
+            <span ng-click="set99set(n)" ng-repeat="n in opt99" class="btn-number-green" ng-show="$index>9">{{n}}</span>
           </div>
 
           <p>

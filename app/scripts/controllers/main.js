@@ -31,6 +31,7 @@ angular.module('angularApp')
 	$scope.datiInviati=$cookieStore.get('Dati');
   $scope.isLoading = true;
 
+  $scope.opt99 = ['00-04', '05-09', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-94', '95-99']
 
   if(!$scope.selectedOption1){ $scope.selectedOption1 = $scope.options[$scope.from1To9()];  }
   if(!$scope.selectedOption2){ $scope.selectedOption2 = $scope.options[$scope.from1To9()];  }
@@ -2551,6 +2552,49 @@ var bet_address= new Array();
       $scope.ticketShow = true
       $scope.printTicket(999,"Sum", number)
     };
+
+
+
+    $scope.pad = function (num, size) {
+        var s = "000000000" + num;
+        return s.substr(s.length-size);
+    }
+
+    //99
+    $scope.set99str = function(){
+      console.log("set99str",$scope.selectedOption1);
+      var number =  $scope.pad($scope.bitRange,2)
+      $scope.ticketName = "g00-99-str-" + number
+      $scope.ticketShow = true
+      $scope.printTicket(99,"Straight", number)
+
+      //$("#tickets").show()
+    };
+
+    $scope.set99set = function(number){
+      //g00-99-set-00-04
+      console.log("set99set",number);
+      //var number =  $scope.pad($scope.bitRange,2)
+      $scope.ticketName = "g00-99-set-" + number
+      $scope.ticketShow = true
+      $scope.printTicket(99,"Set ", number)
+
+      //$("#tickets").show()
+    };
+
+
+    //9
+    $scope.set9str = function(){
+      var number =  $scope.bitRange
+      console.log("set9str",number);
+
+      $scope.ticketName = "g0-9-str-" + number
+      $scope.ticketShow = true
+      $scope.printTicket(9,"Straight", number)
+
+      //$("#tickets").show()
+    };
+
 
     $scope.printTicket = function(lottery,type,number){
       var t = bet_address[$scope.ticketName]
