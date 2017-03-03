@@ -6,7 +6,8 @@ angular.module('angularApp')
 
 
   //$scope.dataUrl = "http://blockchainlotteries.com/lastdata.php?rr=" + Math.floor( (Math.random() * 1000) + 1)
-  $scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
+  //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
+  $scope.dataUrl = "http://5.101.103.192/bclotteries.com/json.php"
   $scope.hideTickets = true;
 
 	$scope.locLang=$location.$$url.substring(1,3);
@@ -80,7 +81,7 @@ bwData.lastblock
 bwData.lastvalidbets
 bwData.lastbigwinbets
 */
-        $timeout(function(){
+        //$timeout(function(){
           $http.get( $scope.dataUrl ).
           success(function(data, status, headers, config) {
             $scope.isLoading = false;
@@ -95,7 +96,7 @@ bwData.lastbigwinbets
             // called asynchronously if an error occurs
             // or server returns response with an error status.
           });
-        }, 1000);
+        //}, 1000);
 
 
 
