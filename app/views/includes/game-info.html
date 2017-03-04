@@ -16,7 +16,8 @@
       <div>
         <img src="images/h2.png" alt="" />
       </div>
-      <h1>Block {{nextBlock}}</h1>
+      <h1 ng-show="isLoading">Loading...</h1>
+      <h1 ng-hide="isLoading">Block {{nextBlock}}</h1>
   </div>
   <div class="col-md-4 col-sm-4 text-center item">
     <span ng-show="gameInfo2">
@@ -25,9 +26,10 @@
       </div>
       <h1>
         <!--  -->
+        <span ng-show="isLoading">Loading...</span>
         {{lastWinN}}
       </h1>
-      <p>
+      <p ng-hide="isLoading">
         Block: {{bwData.lastblock.height}} Age: {{bwData.lastblock.age}}
       </p>
     </span>

@@ -7,7 +7,10 @@ angular.module('angularApp')
 
   //$scope.dataUrl = "http://blockchainlotteries.com/lastdata.php?rr=" + Math.floor( (Math.random() * 1000) + 1)
   //$scope.dataUrl = "http://5.101.103.192/bclotteries.com/json.php"
-  $scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
+  //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
+  //$scope.dataUrl = "http://blockchainlotteries.com/lastdata.php?rr=" + Math.floor( (Math.random() * 1000) + 1)
+  $scope.dataUrl = "http://localhost:8000/json.php"
+
   $scope.hideTickets = true;
 
 	$scope.locLang=$location.$$url.substring(1,3);
@@ -82,7 +85,10 @@ bwData.lastvalidbets
 bwData.lastbigwinbets
 */
         //$timeout(function(){
+
           $http.get( $scope.dataUrl ).
+          //$http( { method: 'JSONP', json_callback: 'JSON_CALLBACK', url: $scope.dataUrl } ).
+
           success(function(data, status, headers, config) {
             $scope.isLoading = false;
               console.log("- - data");
@@ -114,7 +120,9 @@ bwData.lastbigwinbets
   console.log("$routeParams - - - - - - -");
   console.log( $route.current);
 
+  console.log("CALL getBw <---<--------<----------------");
   $scope.getBw()
+
   var callGetBw = function(){ $scope.getBw() };
   setInterval(callGetBw, 15000)
 
