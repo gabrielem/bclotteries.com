@@ -16,16 +16,19 @@
       <div>
         <img src="images/h2.png" alt="" />
       </div>
-      <h1>Block 1234567</h1>
+      <h1>Block {{nextBlock}}</h1>
   </div>
   <div class="col-md-4 col-sm-4 text-center item">
     <span ng-show="gameInfo2">
       <div>
         <img src="images/h3.png" alt="" />
       </div>
-      <h1>Block 1234567</h1>
+      <h1>
+        <!--  -->
+        {{lastWinN}}
+      </h1>
       <p>
-        Block: 1234566 Age: 12 min
+        Block: {{bwData.lastblock.height}} Age: {{bwData.lastblock.age}}
       </p>
     </span>
   </div>

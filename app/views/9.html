@@ -1,7 +1,7 @@
 <div class="container">
 
   <div ng-include src="'views/includes/ticket.html'"></div>
-  
+
   <div ng-include src="'views/includes/game-info.html'"></div>
 
   <div class="row home2 text-center">
@@ -15,88 +15,5 @@
 
 
 <div class="container">
-  <div id="greenbox">
-
-
-
-    <div class="trapezoidal left rotate1">
-      STRAIGHT
-    </div>
-
-    <div class="trapezoidal right rotate2">
-        WIN up to 0.9 <i class="fa fa-bitcoin"></i>
-    </div>
-
-
-    <div class="trapezoidal top">
-      STRAIGTH WIN: 9X
-    </div>
-
-    <div class="game-box">
-      <div class="row text">
-        <div class="col-md-12 text-center green">
-
-        </div>
-      </div>
-      <div class="row btn-box">
-        <div class="col-md-12 text-center">
-
-
-
-          <span style="cursor:pointer;" ng-click="set9str()" class="btn-number hidden-xs" id="display-range1a">{{bitRange}}</span>
-
-
-          <span class="visible-xs">
-            <a href class="btn-plus-minus " ng-click="plus()">
-              <i class="fa fa-minus"></i>
-            </a>
-            <span class="btn-number" id="display-range1b">{{bitRange}}</span>
-            <a href class="btn-plus-minus " ng-click="plus()">
-              <i class="fa fa-plus"></i>
-            </a>
-          </span>
-
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-xs-1">
-          <a href class="btn-plus-minus hidden-xs" ng-click="minus()">
-            <i class="fa fa-minus"></i>
-          </a>
-        </div>
-        <div class="col-xs-1 hidden-xs">
-          <span href="#" class="btn-number-green" id="display-range2">{{bitRange}}</span>
-        </div>
-        <div class="col-xs-9">
-          <input label="" class="form-control range" type="range" min="0" max="9" step="1" value="{{bitRange}}" ng-model="bitRange" >
-        </div>
-        <div class="col-xs-1">
-          <a href class="btn-plus-minus hidden-xs" ng-click="plus()">
-            <i class="fa fa-plus"></i>
-          </a>
-        </div>
-      </div>
-
-
-      <div class="row text">
-        <div class="col-sm-6 text-center green">
-          Minimum: 0.001 <i class="fa fa-bitcoin"></i>
-        </div>
-        <div class="col-sm-6 text-center ">
-          Maximum: 0.1 <i class="fa fa-bitcoin"></i>
-        </div>
-      </div>
-      <div class="row btn-box">
-        <div class="col-md-12 text-center numbers">
-          <p>
-            Select any number from 0 to 9
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
+  <div ng-include src="'views/games/9.html'"></div>
 </div>

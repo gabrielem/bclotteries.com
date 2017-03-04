@@ -22,6 +22,10 @@ angular.module('angularApp', [
       templateUrl: 'views/home.html',
       controller: 'MainCtrl',
     })
+    .when('/999', {
+      templateUrl: 'views/999.html',
+      controller: 'MainCtrl',
+    })
     .when('/99', {
       templateUrl: 'views/99.html',
       controller: 'MainCtrl',

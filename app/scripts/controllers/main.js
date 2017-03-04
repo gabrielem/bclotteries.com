@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('angularApp')
-  .controller('MainCtrl', ['$scope','$http','ServiceMsg','$cookieStore','$cookies','$location','$timeout',
-                        function ($scope, $http, ServiceMsg, $cookieStore, $cookies, $location,$timeout) {
+  .controller('MainCtrl', ['$scope','$http','ServiceMsg','$cookieStore','$cookies','$location','$timeout','$route',
+                        function ($scope, $http, ServiceMsg, $cookieStore, $cookies, $location, $timeout, $route) {
 
 
   //$scope.dataUrl = "http://blockchainlotteries.com/lastdata.php?rr=" + Math.floor( (Math.random() * 1000) + 1)
-  //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
-  $scope.dataUrl = "http://5.101.103.192/bclotteries.com/json.php"
+  //$scope.dataUrl = "http://5.101.103.192/bclotteries.com/json.php"
+  $scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
   $scope.hideTickets = true;
 
 	$scope.locLang=$location.$$url.substring(1,3);
@@ -25,7 +25,7 @@ angular.module('angularApp')
 
 
 
-  $scope.options = [ { name: "1", id: 1 }, { name: "2", id: 2 }, { name: "3", id: 3 }, { name: "4", id: 4 }, { name: "5", id: 5 }, { name: "6", id: 6 }, { name: "7", id: 7 }, { name: "8", id: 8 }, { name: "9", id: 9 } ];
+  $scope.options = [ { name: "0", id: 0 }, { name: "1", id: 1 }, { name: "2", id: 2 }, { name: "3", id: 3 }, { name: "4", id: 4 }, { name: "5", id: 5 }, { name: "6", id: 6 }, { name: "7", id: 7 }, { name: "8", id: 8 }, { name: "9", id: 9 } ];
   $scope.selectedOption1 = $scope.options[$scope.from1To9()];
   $scope.selectedOption2 = $scope.options[$scope.from1To9()];
   $scope.selectedOption3 = $scope.options[$scope.from1To9()];
@@ -89,6 +89,10 @@ bwData.lastbigwinbets
               console.log(data);
               console.log("data - - - -");
               $scope.bwData = data
+
+              $scope.lastWinN = data.lastblock.nonce.slice(-3);
+              $scope.nextBlock = parseInt(data.lastblock.height) + 1
+              //data.lastblock.age
             // this callback will be called asynchronously
             // when the response is available
           }).
@@ -103,7 +107,17 @@ bwData.lastbigwinbets
 
 		//$location.path(urlToGo);
 	}; //$scope.getBw
+
+  /*
+    Call getBw()
+  */
+  console.log("$routeParams - - - - - - -");
+  console.log( $route.current);
+
   $scope.getBw()
+  var callGetBw = function(){ $scope.getBw() };
+  setInterval(callGetBw, 15000)
+
 
 
 
