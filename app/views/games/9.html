@@ -26,14 +26,14 @@
 
 
 
-        <span style="cursor:pointer;" ng-click="set9str(bitRange)" class="btn-number hidden-xs" id="display-range1a">{{bitRange}}</span>
+        <span style="cursor:pointer;" ng-click="set9str(bitRange9)" class="btn-number hidden-xs" id="display-range1a">{{bitRange9}}</span>
 
 
         <span class="visible-xs">
           <a href class="btn-plus-minus " ng-click="plus()">
             <i class="fa fa-minus"></i>
           </a>
-          <span class="btn-number" id="display-range1b">{{bitRange}}</span>
+          <span class="btn-number" id="display-range1b">{{bitRange9}}</span>
           <a href class="btn-plus-minus " ng-click="plus()">
             <i class="fa fa-plus"></i>
           </a>
@@ -50,10 +50,10 @@
         </a>
       </div>
       <div class="col-xs-1 hidden-xs">
-        <span href="#" class="btn-number-green" id="display-range2">{{bitRange}}</span>
+        <span href="#" class="btn-number-green" id="display-range2">{{bitRange9}}</span>
       </div>
       <div class="col-xs-9">
-        <input label="" class="form-control range" type="range" min="0" max="9" step="1" value="{{bitRange}}" ng-model="bitRange" >
+        <input label="" class="form-control range" type="range" min="0" max="9" step="1" value="{{bitRange9}}" ng-model="bitRange9" >
       </div>
       <div class="col-xs-1">
         <a href class="btn-plus-minus hidden-xs" ng-click="plus()">

@@ -141,9 +141,7 @@ bwData.lastbigwinbets
 
 
     $scope.bitRange = 25;
-    if($location.$$url.substring(1)==9){
-      $scope.bitRange = 5;
-    }
+      $scope.bitRange9 = 5;
 
 
 
@@ -159,11 +157,13 @@ bwData.lastbigwinbets
       var newVal = parseInt($('input[type=range].range').val())+1
       if(newVal>max) return false;
       $scope.bitRange = newVal
+      $scope.bitRange9 = newVal
     }
     $scope.minus = function(){
       var newVal = $('input[type=range].range').val()-1
       if(newVal<0) return false;
       $scope.bitRange = newVal
+      $scope.bitRange9 = newVal
     }
 
 
@@ -2666,8 +2666,8 @@ var bet_address= new Array();
 
 
     //9
-    $scope.set9str = function(bitRange){
-      var number =  bitRange
+    $scope.set9str = function(bitRange9){
+      var number =  bitRange9
       console.log("set9str",number);
 
       $scope.ticketName = "g0-9-str-" + number

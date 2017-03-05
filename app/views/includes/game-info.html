@@ -19,42 +19,50 @@
 </div>
 
 <div class="row row-same-height home1">
+
   <div class="col-md-4 col-sm-4" ng-hide="gameInfo1"></div>
   <div class="col-md-4 col-sm-4 text-center item" ng-show="gameInfo1">
+    <div class="box-header">
+      <img src="images/block-winning-numbers-icon.png" alt="Block Winning Numbers" />
+      <h1 class="main">
+        Block Winning Numbers
+      </h1>
+    </div>
+    <p>
+      The last 3 digitsof the Block Nonce
+      <i class="fa fa-question-circle-o" title="Nonce: the random number that generates a new Block." onmouseenter="$(this).tooltip('show')"></i>
+    </p>
     <span>
-      <div>
-        <img src="images/h1.png" alt="" />
-      </div>
-      <p>
-        The last 3 digitsof the Block Nonce
-        <i class="fa fa-question-circle-o" title="Nonce: the random number that generates a new Block." onmouseenter="$(this).tooltip('show')"></i>
-      </p>
       <a href class="popup btn-dark" data-toggle="modal" data-target="#ex99">EXAMPLE</a>
     </span>
-
   </div>
+
   <div class="col-md-4 col-sm-4 text-center item">
-      <div>
-        <img src="images/h2.png" alt="" />
-      </div>
+    <div class="box-header">
+      <img src="images/next-drawing-icon.png" alt="Next Drawing" />
+      <h1 class="main">
+        Next Drawing
+      </h1>
+    </div>
       <h1 ng-show="isLoading">Loading...</h1>
       <h1 ng-hide="isLoading">Block {{nextBlock}}</h1>
   </div>
 
   <div class="col-md-4 col-sm-4" ng-hide="gameInfo1"></div>
   <div class="col-md-4 col-sm-4 text-center item" ng-show="gameInfo2">
-    <span>
-      <div>
-        <img src="images/h3.png" alt="" />
-      </div>
-      <h1>
-        <!--  -->
-        <span ng-show="isLoading">Loading...</span>
-        <span ng-hide="isLoading">{{lastWinN}}</span>
+    <div class="box-header">
+      <img src="images/latest-winning-number-icon.png" alt="Latest Winning Number" />
+      <h1 class="main">
+        Latest Winning Number
       </h1>
-      <p ng-hide="isLoading">
-        Block: {{bwData.lastblock.height}} Age: {{bwData.lastblock.age}}
-      </p>
-    </span>
+    </div>
+    <h1>
+      <!--  -->
+      <span ng-show="isLoading">Loading...</span>
+      <span ng-hide="isLoading">{{lastWinN}}</span>
+    </h1>
+    <p ng-hide="isLoading">
+      Block: {{bwData.lastblock.height}} Age: {{bwData.lastblock.age}}
+    </p>
   </div>
 </div>

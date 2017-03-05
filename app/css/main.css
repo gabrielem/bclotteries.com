@@ -40,6 +40,21 @@ a:hover{
   border-radius: 0;
 }
 
+.box-header{}
+.box-header img{display: inline-block;}
+.box-header h1.main{
+  text-transform: uppercase;font-size:16px;
+  display: inline-block;
+  line-height: 60px;
+  background-image: url('../images/bg-h1.png');
+}
+.box-header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
 #soundControll{
   position: absolute;
   top: 26px;
@@ -120,7 +135,11 @@ nav .container-fluid{
   border:1px solid #003c56;
   padding: 5px 9px;
 }
-.btn-dark-border:hover{}
+.btn-dark-border:hover{
+  color:#ffffff;
+  border:1px solid #003c56;
+  background: #003c56;
+}
 
 .home3{
   margin-top: 30px;
@@ -140,6 +159,7 @@ nav .container-fluid{
 
 .btn-green,.btnSelected{ background-color: #00975c; }
 .btn-blue,.btnBlue{ background-color: #003c56; }
+.btn-blue:hover,.btnBlue:hover{ background-color: #00975c; }
 
 
 .home1{
@@ -290,6 +310,10 @@ a.btn-number{
   font-size:21px;
 }
 
+span.btn-number:hover, a.btn-number:hover{
+  background-color: #00975c;
+}
+
 .select-number{
   border-radius: 9px;
   background-color: #003c56;
@@ -331,13 +355,18 @@ a.btn-number{
   margin: 10px 0 5px 0;
 }
 .btn-plus-minus{
-  background-color: #00975c;
+  background-color: #003c56;
   padding: 5px 10px;
   color: #ffffff;
   text-align: center;
   display: inline-block;
   font-size:21px;
   margin-top:8px;
+  cursor: pointer;
+}
+.btn-plus-minus:hover{
+  background-color: #00975c;
+  color: #ffffff;
 }
 
 a.btn-wager{
