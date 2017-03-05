@@ -10,12 +10,59 @@ body{
 
     background: url('../images/bg.png')
 }
-body, html{height: 100%;margin:0; padding:0;}
+body, html{height: 100%;margin:0; padding:0;position: relative;}
 
 a:hover{
   text-decoration: none;
 }
 
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.modal-dialog {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  padding: 0;
+  z-index: 9999999;
+  background: #ffffff;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+#soundControll{
+  position: absolute;
+  top: 26px;
+  right: 10px;
+  z-index: 9999998;
+  color: #ffffff;
+}
+#soundControll .fa{
+    font-size: 21px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    cursor:pointer;
+}
+#soundControll .fa-volume-off{display: none;}
+#soundControll .fa:hover{
+  background: #ffffff;
+  color: #003c56;
+}
 .row-same-height {
   display: -webkit-box;
   display: -webkit-flex;
@@ -175,15 +222,15 @@ div.trapezoidal.top{
 div.trapezoidal.left{
   position: absolute;
   top:50%;
-  left:-80px;
-  width: 108px;
+  left:-95px;
+  width: 138px;
   margin-top: -20px;
 }
 div.trapezoidal.right{
   position: absolute;
   top:50%;
-  right:-80px;
-  width: 108px;
+  right:-95px;
+  width: 138px;
   margin-top: -20px;
 }
 

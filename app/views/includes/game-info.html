@@ -1,6 +1,27 @@
+
+<!-- Modal -->
+<div class="modal fade" id="ex99" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div> -->
+      <div class="modal-body">
+        <div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <img src="images/popup/verify-game-99.png" alt="" style="max-width:100%;" />
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <div class="row row-same-height home1">
-  <div class="col-md-4 col-sm-4 text-center item">
-    <span ng-show="gameInfo1">
+  <div class="col-md-4 col-sm-4" ng-hide="gameInfo1"></div>
+  <div class="col-md-4 col-sm-4 text-center item" ng-show="gameInfo1">
+    <span>
       <div>
         <img src="images/h1.png" alt="" />
       </div>
@@ -8,7 +29,7 @@
         The last 3 digitsof the Block Nonce
         <i class="fa fa-question-circle-o" title="Nonce: the random number that generates a new Block." onmouseenter="$(this).tooltip('show')"></i>
       </p>
-      <a href="#" class="btn-dark">EXAMPLE</a>
+      <a href class="popup btn-dark" data-toggle="modal" data-target="#ex99">EXAMPLE</a>
     </span>
 
   </div>
@@ -19,15 +40,17 @@
       <h1 ng-show="isLoading">Loading...</h1>
       <h1 ng-hide="isLoading">Block {{nextBlock}}</h1>
   </div>
-  <div class="col-md-4 col-sm-4 text-center item">
-    <span ng-show="gameInfo2">
+
+  <div class="col-md-4 col-sm-4" ng-hide="gameInfo1"></div>
+  <div class="col-md-4 col-sm-4 text-center item" ng-show="gameInfo2">
+    <span>
       <div>
         <img src="images/h3.png" alt="" />
       </div>
       <h1>
         <!--  -->
         <span ng-show="isLoading">Loading...</span>
-        {{lastWinN}}
+        <span ng-hide="isLoading">{{lastWinN}}</span>
       </h1>
       <p ng-hide="isLoading">
         Block: {{bwData.lastblock.height}} Age: {{bwData.lastblock.age}}

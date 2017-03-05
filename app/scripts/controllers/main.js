@@ -18,7 +18,7 @@ angular.module('angularApp')
   $scope.gameInfo1=true
   $scope.gameInfo2=true
 
-  $scope.from1To9 = function(){
+  var from1To9 = function(){
     var n = Math.floor((Math.random()*9) + 1)
     console.log("-----> from1To9:",n);
     return n;
@@ -28,18 +28,26 @@ angular.module('angularApp')
 
 
 
-  $scope.options = [ { name: "0", id: 0 }, { name: "1", id: 1 }, { name: "2", id: 2 }, { name: "3", id: 3 }, { name: "4", id: 4 }, { name: "5", id: 5 }, { name: "6", id: 6 }, { name: "7", id: 7 }, { name: "8", id: 8 }, { name: "9", id: 9 } ];
-  $scope.selectedOption1 = $scope.options[$scope.from1To9()];
-  $scope.selectedOption2 = $scope.options[$scope.from1To9()];
-  $scope.selectedOption3 = $scope.options[$scope.from1To9()];
+  var options999 = [ { name: "0", id: 0 }, { name: "1", id: 1 }, { name: "2", id: 2 }, { name: "3", id: 3 }, { name: "4", id: 4 }, { name: "5", id: 5 }, { name: "6", id: 6 }, { name: "7", id: 7 }, { name: "8", id: 8 }, { name: "9", id: 9 } ];
+  $scope.options = options999
+
+  //$scope.selectedOption1 = $scope.options[from1To9()];
+  //$scope.selectedOption2 = $scope.options[from1To9()];
+  //$scope.selectedOption3 = $scope.options[from1To9()];
 	$scope.datiInviati=$cookieStore.get('Dati');
   $scope.isLoading = true;
 
   $scope.opt99 = ['00-04', '05-09', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-94', '95-99']
 
-  if(!$scope.selectedOption1){ $scope.selectedOption1 = $scope.options[$scope.from1To9()];  }
-  if(!$scope.selectedOption2){ $scope.selectedOption2 = $scope.options[$scope.from1To9()];  }
-  if(!$scope.selectedOption3){ $scope.selectedOption3 = $scope.options[$scope.from1To9()];  }
+  $scope.init999select = function(){
+    if(!$scope.selectedOption1){ $scope.selectedOption1 = options999[from1To9()];  }
+    if(!$scope.selectedOption2){ $scope.selectedOption2 = options999[from1To9()];  }
+    if(!$scope.selectedOption3){ $scope.selectedOption3 = options999[from1To9()];  }
+  };
+
+
+
+
 
 
   String.prototype.capitalize = function() {
@@ -138,9 +146,11 @@ bwData.lastbigwinbets
     }
 
 
+
+
     if($location.$$url.substring(1)=="best-winner"){
-      $scope.gameInfo1=true
-      $scope.gameInfo2=true
+      $scope.gameInfo1 = false
+      $scope.gameInfo2 = false
     }
     //console.log("-------->------->",$location.$$url.substring(1));
 
@@ -2551,9 +2561,44 @@ var bet_address= new Array();
       $scope.ticketShow = false
         //$("#tickets").fadeOut()
     };
+
+    $scope.set999price = function(){
+
+      console.log("set999price");
+
+      var s1 = $("#s1").val()
+      var s2 = $("#s2").val()
+      var s3 = $("#s3").val()
+      var number = parseInt(s1) + parseInt(s2) + parseInt(s3)
+      var numberBox = ""+s1+s2+s3
+      if( s1==s2==s3 || bet_address["glot-box-" + numberBox] == undefined ){
+        //Disable BOX paly
+        $scope.boxPrice = "---"
+      }else{
+        $scope.boxPrice = bet_address["glot-box-" + numberBox][3]
+      }
+
+      if(bet_address["glot-sum-" + number]){
+          $scope.luckySumPrice = bet_address["glot-sum-" + number][3]
+      }else{
+        console.log("SUM is undefined",number);
+        console.log(bet_address["glot-sum-" + number]);
+      }
+
+    };
+
+
+    $timeout(function(){
+      $scope.set999price()
+    },500)
+
     $scope.set999str = function(){
       console.log("set999str",$scope.selectedOption1);
-      var number = $scope.selectedOption1.id + "" + $scope.selectedOption2.id + $scope.selectedOption3.id
+      //var number = $scope.selectedOption1.id + "" + $scope.selectedOption2.id + $scope.selectedOption3.id
+      var s1 = $("#s1").val()
+      var s2 = $("#s2").val()
+      var s3 = $("#s3").val()
+      var number = s1+s2+s3
       $scope.ticketName = "glot-str-" + number
       $scope.ticketShow = true
       $scope.printTicket(999,"Straight", number)
@@ -2562,12 +2607,25 @@ var bet_address= new Array();
     };
 
     $scope.set999box = function(){
-      console.log("set999box",$scope.selectedOption1);
-      var number = $scope.selectedOption1.id + "" + $scope.selectedOption2.id + $scope.selectedOption3.id
-      $scope.ticketName = "glot-box-" + number
-      $scope.ticketShow = true
-      $scope.printTicket(999,"Box", number)
+      console.log("set999box");
+      //var number = $scope.selectedOption1.id + "" + $scope.selectedOption2.id + $scope.selectedOption3.id
+      var s1 = $("#s1").val()
+      var s2 = $("#s2").val()
+      var s3 = $("#s3").val()
+      //var number = parseInt(s1) + parseInt(s2) + parseInt(s3)
+      var number = s1+""+s2+s3
+      console.log("--Number",number);
+      console.log(bet_address["glot-box-" + number]);
+      if(bet_address["glot-box-" + number]){
+        $scope.ticketName = "glot-box-" + number
+        $scope.printTicket(999,"Box", number)
+        $scope.ticketShow = true
+      }else{
+        console.log("S T O P !!!!!!!!! <--<---<-----<--------");
+        return;
+      }
     };
+
 
     $scope.set999sum = function(){
       console.log("set999sum",$scope.selectedOption1);
@@ -2585,9 +2643,9 @@ var bet_address= new Array();
     }
 
     //99
-    $scope.set99str = function(){
+    $scope.set99str = function(bitRange){
       console.log("set99str",$scope.selectedOption1);
-      var number =  $scope.pad($scope.bitRange,2)
+      var number =  $scope.pad(bitRange,2)
       $scope.ticketName = "g00-99-str-" + number
       $scope.ticketShow = true
       $scope.printTicket(99,"Straight", number)
@@ -2608,8 +2666,8 @@ var bet_address= new Array();
 
 
     //9
-    $scope.set9str = function(){
-      var number =  $scope.bitRange
+    $scope.set9str = function(bitRange){
+      var number =  bitRange
       console.log("set9str",number);
 
       $scope.ticketName = "g0-9-str-" + number

@@ -34,8 +34,8 @@ angular.module('angularApp', [
       templateUrl: 'views/9.html',
       controller: 'MainCtrl',
     })
-    .when('/best-winner', {
-      templateUrl: 'views/best-winner.html',
+    .when('/best-winners', {
+      templateUrl: 'views/best-winners.html',
       controller: 'MainCtrl',
     })
 
