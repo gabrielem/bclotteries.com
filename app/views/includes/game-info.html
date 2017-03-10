@@ -20,8 +20,8 @@
 
 <div class="row row-same-height home1">
 
-  <div class="col-md-4 col-sm-4" ng-hide="gameInfo1"></div>
-  <div class="col-md-4 col-sm-4 text-center item" ng-show="gameInfo1">
+  <div class="col-md-4 col-sm-4" ng-show="isActive('best-winners')"></div>
+  <div class="col-md-4 col-sm-4 text-center item" ng-hide="isActive('best-winners')">
     <div class="box-header">
       <img src="images/block-winning-numbers-icon.png" alt="Block Winning Numbers" />
       <h1 class="main">
@@ -29,7 +29,12 @@
       </h1>
     </div>
     <p>
-      The last 3 digitsof the Block Nonce
+      The last
+      <span ng-show="isActive('9') || isActive('')"> digit </span>
+      <span ng-show="isActive('99')">2 digits </span>
+      <span ng-show="isActive('999')">3 digits </span>
+      of the Block Nonce
+
       <i class="fa fa-question-circle-o" title="Nonce: the random number that generates a new Block." onmouseenter="$(this).tooltip('show')"></i>
     </p>
     <span>
@@ -48,8 +53,8 @@
       <h1 ng-hide="isLoading">Block {{nextBlock}}</h1>
   </div>
 
-  <div class="col-md-4 col-sm-4" ng-hide="gameInfo1"></div>
-  <div class="col-md-4 col-sm-4 text-center item" ng-show="gameInfo2">
+  <div class="col-md-4 col-sm-4" ng-show="isActive('best-winners')"></div>
+  <div class="col-md-4 col-sm-4 text-center item" ng-hide="isActive('best-winners')">
     <div class="box-header">
       <img src="images/latest-winning-number-icon.png" alt="Latest Winning Number" />
       <h1 class="main">
@@ -59,7 +64,13 @@
     <h1>
       <!--  -->
       <span ng-show="isLoading">Loading...</span>
+      <!--
       <span ng-hide="isLoading">{{lastWinN}}</span>
+      -->
+      <span ng-show="isActive('9') || isActive('')"> {{lastWinN[2]}} </span>
+      <span ng-show="isActive('99')"> {{lastWinN[1]}}{{lastWinN[2]}} </span>
+      <span ng-show="isActive('999')">{{lastWinN}}</span>
+
     </h1>
     <p ng-hide="isLoading">
       Block: {{bwData.lastblock.height}} Age: {{bwData.lastblock.age}}

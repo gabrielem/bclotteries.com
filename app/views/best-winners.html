@@ -1,6 +1,6 @@
 <div class="container" >
 
-    
+
   <div ng-include src="'views/includes/game-info.html'"></div>
 
 
@@ -41,7 +41,7 @@
         <td> {{setGameName(row.game) }} </td>
         <td> {{setWinningNumber(row)}} </td>
         <td> {{row.amount_real}} </td>
-        <td> {{row.time_iso}} </td>
+        <td> {{row.payout_real}} </td>
         <td> <span ng-bind-html-unsafe="row.payout_tx_id_short"></span>  </td>
       </tr>
     </tbody>
@@ -72,7 +72,7 @@
       <td> {{setGameName(row.game) }} </td>
       <td> {{setWinningNumber(row)}} </td>
       <td> {{row.amount_real}} </td>
-      <td> {{row.time_iso}} </td>
+      <td> {{row.payout_real}} </td>
       <td> <span ng-bind-html-unsafe="row.payout_tx_id_short"></span>  </td>
     </tr>
   </tbody>
