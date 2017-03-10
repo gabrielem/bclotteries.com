@@ -10,6 +10,7 @@ angular.module('angularApp')
   //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
   //$scope.dataUrl = "http://blockchainlotteries.com/lastdata.php?rr=" + Math.floor( (Math.random() * 1000) + 1)
   $scope.dataUrl = "http://localhost:8000/json.php"
+  //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
 
   $scope.hideTickets = true;
 
@@ -94,6 +95,9 @@ bwData.lastbigwinbets
 */
         //$timeout(function(){
 
+$scope.recent = false
+$scope.cold = false
+
           $http.get( $scope.dataUrl ).
           //$http( { method: 'JSONP', json_callback: 'JSON_CALLBACK', url: $scope.dataUrl } ).
 
@@ -106,6 +110,14 @@ bwData.lastbigwinbets
 
               $scope.lastWinN = data.lastblock.nonce.slice(-3);
               $scope.nextBlock = parseInt(data.lastblock.height) + 1
+
+              console.log("data.recentnumbers");
+              console.log("->-->--->---->----->------>------->------------>");
+              console.log(data.recentnumbers);
+
+              $scope.recent = data.recentnumbers
+              $scope.cold = data.latenumbers
+
               //data.lastblock.age
             // this callback will be called asynchronously
             // when the response is available
