@@ -13,16 +13,16 @@
 
         <table ng-show="recent" class="table table-hover table-striped">
         <tr>
-          <td>
+          <td class="text-center">
             <b>Winning Number</b>
           </td>
-          <td>
+          <td class="text-center">
             <b>Block Number</b>
           </td>
         </tr>
 
         <tr ng-repeat="i in recent">
-          <td>
+          <td class="text-center">
             <span ng-show="isActive('9') || isActive('')">{{i.nonce_last_1_digit}}</span>
             <span ng-show="isActive('99')">{{i.nonce_last_2_digits}}</span>
             <span ng-show="isActive('999')">{{i.nonce_last_3_digits}}</span>
@@ -57,7 +57,7 @@
 
         <table ng-show="cold" class="table table-hover table-striped">
         <tr>
-          <td>
+          <td class="text-center">
             <b>Cold Number</b>
           </td>
           <td>
@@ -66,19 +66,19 @@
         </tr>
 
         <tr ng-repeat="i in cold.game_09" ng-show="isActive('9') || isActive('')">
-          <td>
+          <td class="text-center">
             {{i.late_number}}
           </td>
-          <td>
+          <td class="text-center">
             {{i.block_age}}
           </td>
         </tr>
 
         <tr ng-repeat="i in cold.game_0099" ng-show="isActive('99')">
-          <td>
+          <td class="text-center">
             {{i.late_number}}
           </td>
-          <td>
+          <td class="text-center">
             {{i.block_age}}
           </td>
         </tr>
