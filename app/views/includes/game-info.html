@@ -51,6 +51,10 @@
     </div>
       <h1 ng-show="isLoading">Loading...</h1>
       <h1 ng-hide="isLoading">Block {{nextBlock}}</h1>
+
+      <p ng-hide="isLoading || !isActive('best-winners')">
+        Age: {{bwData.lastblock.age}}
+      </p>
   </div>
 
   <div class="col-md-4 col-sm-4" ng-show="isActive('best-winners')"></div>

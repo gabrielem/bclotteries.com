@@ -9,8 +9,8 @@ angular.module('angularApp')
   //$scope.dataUrl = "http://5.101.103.192/bclotteries.com/json.php"
   //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
   //$scope.dataUrl = "http://blockchainlotteries.com/lastdata.php?rr=" + Math.floor( (Math.random() * 1000) + 1)
-  $scope.dataUrl = "http://localhost:8000/json.php"
-  //$scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
+  //$scope.dataUrl = "http://localhost:8000/json.php"
+  $scope.dataUrl = "http://127.0.0.1:8080/best-winner.json"
 
   $scope.hideTickets = true;
 
