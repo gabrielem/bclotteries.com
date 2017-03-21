@@ -2702,6 +2702,9 @@ var bet_address= new Array();
         'address':t[1]
 
       }
+        if(lottery==9){
+          ticket.price="Min. 0.001 / Max 0.01 "
+        }
       $scope.ticket = ticket
       $('#pop-qr-code').html('');
       $('#pop-qr-code').qrcode({correctLevel: 1,width: 135,height: 135,text: 'bitcoin:'+t[1]+'?amount='+t[2]});
