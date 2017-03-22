@@ -2702,10 +2702,12 @@ var bet_address= new Array();
         'address':t[1]
 
       }
+      /*
         if(lottery==9){
           ticket.win="9x "
           ticket.price="0.001 to 0.01 "
         }
+        */
       $scope.ticket = ticket
       $('#pop-qr-code').html('');
       $('#pop-qr-code').qrcode({correctLevel: 1,width: 135,height: 135,text: 'bitcoin:'+t[1]+'?amount='+t[2]});
