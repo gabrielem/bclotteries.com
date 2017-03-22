@@ -2703,7 +2703,7 @@ var bet_address= new Array();
 
       }
         if(lottery==9){
-          ticket.price="Min. 0.001 / Max 0.01 "
+          ticket.price="0.001 to 0.01 "
         }
       $scope.ticket = ticket
       $('#pop-qr-code').html('');
