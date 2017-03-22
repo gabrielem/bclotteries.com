@@ -2703,6 +2703,7 @@ var bet_address= new Array();
 
       }
         if(lottery==9){
+          ticket.win="9x "
           ticket.price="0.001 to 0.01 "
         }
       $scope.ticket = ticket
