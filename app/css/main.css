@@ -574,6 +574,7 @@ a.back-to-the-game .fa{
   color: #ffffff;
   cursor: pointer;
   margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 .faq .q .fa{
